@@ -8,10 +8,6 @@ string Bishop::getName(){
 
 array<array<bool,8>,8> Bishop::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
-    int startRow = 0;
-    int startCol = 0;
-    int endRow = 7;
-    int endCol = 7;
     string color = ChessBoard[position[0]][position[1]]->getColor();
     string actualColor;
     //prawy - przód
@@ -95,17 +91,6 @@ array<array<bool,8>,8> Bishop::checkPossibleMove(array<int, 2> position,  array<
             col++;
         }
     }
-    //poziom
-   /* if(startRow != endRow){
-        for(int i=startRow; i<endRow; i++){
-            possibleMoves[i][i] = true;
-        }
-    }
-    if(startCol != endCol){
-        for(int i=startCol; i<endCol; i++){
-            possibleMoves[i][i] = true;
-        }
-    }*/
 
     possibleMoves[position[0]][position[1]] = false;
 
