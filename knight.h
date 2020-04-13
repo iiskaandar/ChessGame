@@ -6,6 +6,7 @@ class Knight : public Pawn
 {
 public:
     string getName() override;
+    array<array<bool,8>,8> checkPossibleMove(array<int, 2> position, array<array<Pawn*,8>,8> ChessBoard) override;
     int leftWhiteStartRow = 7;
     int leftWhiteStartColumn = 1;
     int rightWhiteStartRow = 7;
