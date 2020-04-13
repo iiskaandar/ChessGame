@@ -16,10 +16,24 @@ QtApplication {
     ]
 
     files: [
+        "bishop.cpp",
+        "bishop.h",
+        "king.cpp",
+        "king.h",
+        "knight.cpp",
+        "knight.h",
         "main.cpp",
         "chessgame.cpp",
         "chessgame.h",
         "chessgame.ui",
+        "mainpawn.cpp",
+        "mainpawn.h",
+        "pawn.cpp",
+        "pawn.h",
+        "queen.cpp",
+        "queen.h",
+        "rook.cpp",
+        "rook.h",
     ]
 
     install: true

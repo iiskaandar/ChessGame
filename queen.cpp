@@ -1,6 +1,9 @@
 #include "queen.h"
 
-Queen::Queen()
-{
+using namespace std;
 
+string Queen::getName(){
+    return ("Królowa");
 }
+
+

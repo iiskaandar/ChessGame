@@ -1,11 +1,13 @@
-#ifndef QUEEN_H
-#define QUEEN_H
+#include "chessgame.h"
 
+using namespace std;
 
-class Queen
+class Queen : public Pawn
 {
 public:
-    Queen();
+    string getName() override;
+    int whiteStartRow = 7;
+    int whiteStartColumn = 3;
+    int blackStartRow = 0;
+    int blackStartColumn = 3;
 };
-
-#endif // QUEEN_H

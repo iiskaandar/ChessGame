@@ -1,6 +1,8 @@
 #include "knight.h"
 
-knight::knight()
-{
+using namespace std;
 
+string Knight::getName(){
+    return ("Koń");
 }
+

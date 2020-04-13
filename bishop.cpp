@@ -1,6 +1,7 @@
 #include "bishop.h"
 
-bishop::bishop()
-{
+using namespace std;
 
+string Bishop::getName(){
+    return ("Goniec");
 }
