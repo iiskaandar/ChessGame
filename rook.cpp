@@ -7,14 +7,7 @@ string Rook::getName(){
     return ("Wieża");
 }
 
-bool Rook::checkMove(int position[2], int propositionPosition[2]){
-    if ((position[0] == propositionPosition[0]) || (position[1] == propositionPosition[1])){
-        return true;
-    }
-    else return false;
-}
-
-array<array<bool,8>,8> Rook::checkPossibleMove(int position[2],  array<array<Pawn*,8>,8> ChessBoard){
+array<array<bool,8>,8> Rook::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     int startRow = 0;
     int startCol = 0;
@@ -86,9 +79,11 @@ array<array<bool,8>,8> Rook::checkPossibleMove(int position[2],  array<array<Paw
 
             } else if (actualColor == color){
                 startCol = i + 1;
+                break;
             } else {
                 //zbijanie
                 startCol = i;
+                break;
             }
         }
     }

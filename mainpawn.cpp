@@ -14,7 +14,7 @@ void MainPawn::setFirstMove(bool isFirstMove){
     MainPawn::firstMove = isFirstMove;
 }
 
-array<array<bool,8>,8> MainPawn::checkPossibleMove(int position[2],  array<array<Pawn*,8>,8> ChessBoard){
+array<array<bool,8>,8> MainPawn::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     string color = ChessBoard[position[0]][position[1]]->getColor();
     string actualColor;

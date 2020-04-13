@@ -12,13 +12,7 @@ void Pawn::setColor(string color){
     Pawn::color = color;
 }
 
-bool Pawn::checkMove(int position[2], int propositionPosition[2]){
-    qInfo() << position;
-    qInfo() << propositionPosition;
-    return(false);
-}
-
-array<array<bool,8>,8> Pawn::checkPossibleMove(int position[2], array<array<Pawn*,8>,8> ChessBoard){
+array<array<bool,8>,8> Pawn::checkPossibleMove(array<int, 2> position, array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     return(possibleMoves);
 }

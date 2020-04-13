@@ -23,8 +23,8 @@ public:
 private:
     Ui::ChessGame *ui;
     array<array<Pawn*,8>,8> ChessBoard;
-    int selectedPosition[2] = {-1, -1};
-    int propositionPosition[2];
+    array<int, 2> selectedPosition = {-1, -1};
+    array<int, 2> propositionPosition;
     array<array<bool,8>,8> possibleMoves;
 
 private slots:

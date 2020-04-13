@@ -29,8 +29,6 @@ ChessGame::ChessGame(QWidget *parent)
     }
     ChessGame::SetBoard();
 
-    //King king;
-    //ui->field_00->setText(QString::fromStdString(king.getName()));
 }
 
 ChessGame::~ChessGame()
@@ -161,12 +159,5 @@ void ChessGame::SetPawn(Pawn* pawn, int column, int row, string color){
     button->setText(QString::fromStdString(pawn->getName()));
 }
 
-
-// tablica tablic [[Pawn,0,Pawn,],[],[],[],[],[],[],[]] od razu zdefiniowana liczba pol w tablicy
-// początkowa tablica
-// w pionkach będzie atrybut whiteStartRow blackStartRow whiteStartColumn blackStartColumn
-// King king; ChessBoard[king.startColumn][king.startRow]
-// string fieldText = 'field'+toString(king.startColumn)+toString(king.startRow)
-// ui->field_00->setText(fieldText)
 
 
