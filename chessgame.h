@@ -6,9 +6,7 @@
 #include <iostream>
 #include <string>
 #include <array>
-
 #include <QMainWindow>
-//cos
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ChessGame; }
