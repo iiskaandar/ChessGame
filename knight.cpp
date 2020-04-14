@@ -6,6 +6,14 @@ string Knight::getName(){
     return ("Koń");
 }
 
+QString Knight::getIconName(){
+    if(Knight::getColor() == "white"){
+        return("horse1");
+    } else {
+        return("horse");
+    }
+}
+
 array<array<bool,8>,8> Knight::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     string color = ChessBoard[position[0]][position[1]]->getColor();

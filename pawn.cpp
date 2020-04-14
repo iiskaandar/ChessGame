@@ -28,3 +28,7 @@ bool Pawn::getFirstMove(){
 void Pawn::setFirstMove(bool isFirstMove){
     Pawn::firstMove = isFirstMove;
 }
+
+QString Pawn::getIconName(){
+    return "";
+}

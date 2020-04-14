@@ -6,6 +6,14 @@ string Queen::getName(){
     return ("Królowa");
 }
 
+QString Queen::getIconName(){
+    if(Queen::getColor() == "white"){
+        return("queen1");
+    } else {
+        return("queen");
+    }
+}
+
 array<array<bool,8>,8> Queen::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     int startRow = 0;

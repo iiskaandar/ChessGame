@@ -2,6 +2,7 @@
 #define CHESSGAME_H
 #include <tuple>
 #include "pawn.h"
+#include "ui_chessgame.h"
 #include <iostream>
 #include <string>
 #include <array>
@@ -45,6 +46,7 @@ private slots:
     void UndisableButtons();
     void UndisablePossibleMoves();
     void DisableAllButtons();
+    void AddIcon(QString url, QPushButton* button);
 
 };
 #endif // CHESSGAME_H

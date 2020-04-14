@@ -14,6 +14,14 @@ void MainPawn::setFirstMove(bool isFirstMove){
     MainPawn::firstMove = isFirstMove;
 }
 
+QString MainPawn::getIconName(){
+    if(MainPawn::getColor() == "white"){
+        return("pawn1");
+    } else {
+        return("pawn");
+    }
+}
+
 array<array<bool,8>,8> MainPawn::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     string color = ChessBoard[position[0]][position[1]]->getColor();

@@ -5,6 +5,15 @@ using namespace std;
 string King::getName(){
     return ("Król");
 }
+
+QString King::getIconName(){
+    if(King::getColor() == "white"){
+        return("king1");
+    } else {
+        return("king");
+    }
+}
+
 array<array<bool,8>,8> King::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     string color = ChessBoard[position[0]][position[1]]->getColor();

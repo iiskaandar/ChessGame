@@ -137,12 +137,14 @@ void ChessGame::MovePawn(){
     ChessGame::ChessBoard[ChessGame::propositionPosition[0]][ChessGame::propositionPosition[1]] = pawnToMove;
     QString field = "field_" + QString::number(ChessGame::propositionPosition[0]) + QString::number(ChessGame::propositionPosition[1]);
     QPushButton *button = ChessGame::findChild<QPushButton *>(field);
-    if(!ChessGame::isWinner) {button->setText(QString::fromStdString(pawnToMove->getName()));}
+    button->setText(QString::fromStdString(pawnToMove->getName()));
+    AddIcon(pawnToMove->getIconName(), button);
     Pawn* nullPawn = new Pawn();
     ChessGame::ChessBoard[ChessGame::selectedPosition[0]][ChessGame::selectedPosition[1]] = nullPawn;
     QString fieldNull = "field_" + QString::number(ChessGame::selectedPosition[0]) + QString::number(ChessGame::selectedPosition[1]);
     QPushButton *nullButton = ChessGame::findChild<QPushButton *>(fieldNull);
     nullButton->setText(QString::fromStdString(nullPawn->getName()));
+    nullButton->setIcon(QIcon());
 }
 
 void ChessGame::CheckLoss(){
@@ -218,6 +220,17 @@ void ChessGame::SetPawn(Pawn* pawn, int column, int row, string color){
     QString field = "field_" + QString::number(row) + QString::number(column);
     QPushButton *button = ChessGame::findChild<QPushButton *>(field);
     button->setText(QString::fromStdString(pawn->getName()));
+    AddIcon(pawn->getIconName(), button);
+}
+
+void ChessGame::AddIcon(QString url, QPushButton* button){
+    QIcon icon;
+    QPixmap qpm;
+    if(qpm.load(":/images/"+url+".png"))
+    {
+        icon.addPixmap(qpm);
+        button->setIcon(icon);
+    }
 }
 
 

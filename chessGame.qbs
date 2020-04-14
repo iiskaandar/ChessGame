@@ -18,6 +18,7 @@ QtApplication {
     files: [
         "bishop.cpp",
         "bishop.h",
+        "images.qrc",
         "king.cpp",
         "king.h",
         "knight.cpp",

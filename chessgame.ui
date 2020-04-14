@@ -19,7 +19,7 @@
      <rect>
       <x>150</x>
       <y>30</y>
-      <width>918</width>
+      <width>947</width>
       <height>391</height>
      </rect>
     </property>
@@ -89,6 +89,12 @@
      </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="field_00">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -483,14 +489,27 @@
    <widget class="QLabel" name="turn">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>0</y>
+      <x>240</x>
+      <y>10</y>
       <width>231</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>59</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Now turn:</string>
     </property>
    </widget>
   </widget>

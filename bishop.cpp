@@ -6,6 +6,14 @@ string Bishop::getName(){
     return ("Goniec");
 }
 
+QString Bishop::getIconName(){
+    if(Bishop::getColor() == "white"){
+        return("bishop1");
+    } else {
+        return("bishop");
+    }
+}
+
 array<array<bool,8>,8> Bishop::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     string color = ChessBoard[position[0]][position[1]]->getColor();

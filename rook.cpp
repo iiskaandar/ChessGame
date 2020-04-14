@@ -7,6 +7,14 @@ string Rook::getName(){
     return ("Wieża");
 }
 
+QString Rook::getIconName(){
+    if(Rook::getColor() == "white"){
+        return("rook1");
+    } else {
+        return("rook");
+    }
+}
+
 array<array<bool,8>,8> Rook::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     int startRow = 0;

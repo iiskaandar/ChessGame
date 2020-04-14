@@ -7,6 +7,7 @@ class Rook : public Pawn
 public:
     string getName() override;
     array<array<bool,8>,8> checkPossibleMove(array<int, 2> position, array<array<Pawn*,8>,8> ChessBoard) override;
+    QString getIconName() override;
     int leftWhiteStartRow = 7;
     int leftWhiteStartColumn = 0;
     int rightWhiteStartRow = 7;
