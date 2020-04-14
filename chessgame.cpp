@@ -28,6 +28,7 @@ ChessGame::ChessGame(QWidget *parent)
 
     }
     ChessGame::SetBoard();
+    ui->turn->setText(QString::fromStdString(ChessGame::turn));
 
 }
 
@@ -73,23 +74,44 @@ void ChessGame::TryToMovePawn(){
           ChessGame::ChessBoard[ChessGame::selectedPosition[0]][ChessGame::selectedPosition[1]]->setFirstMove(false);
         }
         MovePawn();
+        if(!ChessGame::isWinner){
+          ChangeTurn();
+        }
 
     }
     ResetPosition();
 
 }
 
+void ChessGame::ChangeTurn(){
+    if(ChessGame::turn == "white"){
+        ChessGame::turn = "black";
+    } else {
+        ChessGame::turn = "white";
+    }
+    ui->turn->setText(QString::fromStdString(ChessGame::turn));
+}
+
 void ChessGame::MovePawn(){
+    CheckLoss();
     Pawn* pawnToMove = ChessGame::ChessBoard[ChessGame::selectedPosition[0]][ChessGame::selectedPosition[1]];
     ChessGame::ChessBoard[ChessGame::propositionPosition[0]][ChessGame::propositionPosition[1]] = pawnToMove;
     QString field = "field_" + QString::number(ChessGame::propositionPosition[0]) + QString::number(ChessGame::propositionPosition[1]);
     QPushButton *button = ChessGame::findChild<QPushButton *>(field);
-    button->setText(QString::fromStdString(pawnToMove->getName()));
+    if(!ChessGame::isWinner) {button->setText(QString::fromStdString(pawnToMove->getName()));}
     Pawn* nullPawn = new Pawn();
     ChessGame::ChessBoard[ChessGame::selectedPosition[0]][ChessGame::selectedPosition[1]] = nullPawn;
     QString fieldNull = "field_" + QString::number(ChessGame::selectedPosition[0]) + QString::number(ChessGame::selectedPosition[1]);
     QPushButton *nullButton = ChessGame::findChild<QPushButton *>(fieldNull);
     nullButton->setText(QString::fromStdString(nullPawn->getName()));
+}
+
+void ChessGame::CheckLoss(){
+    if(ChessGame::ChessBoard[ChessGame::propositionPosition[0]][ChessGame::propositionPosition[1]]->getName() == "Król"){
+        string lostMessage = ChessGame::ChessBoard[ChessGame::propositionPosition[0]][ChessGame::propositionPosition[1]]->getColor() + " lost";
+        ui->turn->setText(QString::fromStdString(lostMessage));
+        ChessGame::isWinner = true;
+    }
 }
 
 void ChessGame::ResetPosition(){

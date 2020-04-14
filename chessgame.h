@@ -26,6 +26,8 @@ private:
     array<int, 2> selectedPosition = {-1, -1};
     array<int, 2> propositionPosition;
     array<array<bool,8>,8> possibleMoves;
+    string turn = "white";
+    bool isWinner = false;
 
 private slots:
     void FieldPressed();
@@ -38,6 +40,8 @@ private slots:
     void TryToMovePawn();
     bool CheckPosition();
     void ResetPosition();
+    void ChangeTurn();
+    void CheckLoss();
 
 };
 #endif // CHESSGAME_H
