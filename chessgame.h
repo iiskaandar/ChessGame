@@ -42,6 +42,9 @@ private slots:
     void ResetPosition();
     void ChangeTurn();
     void CheckLoss();
+    void UndisableButtons();
+    void UndisablePossibleMoves();
+    void DisableAllButtons();
 
 };
 #endif // CHESSGAME_H

@@ -22,6 +22,7 @@ ChessGame::ChessGame(QWidget *parent)
             QString butName = "field_" + QString::number(column) + QString::number(row) ;
             numButtons[(row+1)*(column+1)] = ChessGame::findChild<QPushButton *>(butName);
             numButtons[(row+1)*(column+1)]->setText("");
+            numButtons[(row+1)*(column+1)]->setDisabled(true);
             connect(numButtons[(row+1)*(column+1)], SIGNAL(released()), this,
                     SLOT(FieldPressed()));
         }
@@ -29,12 +30,48 @@ ChessGame::ChessGame(QWidget *parent)
     }
     ChessGame::SetBoard();
     ui->turn->setText(QString::fromStdString(ChessGame::turn));
+    UndisableButtons();
 
 }
 
 ChessGame::~ChessGame()
 {
     delete ui;
+}
+
+void ChessGame::UndisableButtons(){
+    string color = ChessGame::turn;
+    for(int row=0; row <8; row++){
+        for(int col=0; col<8; col++){
+            QString field = "field_" + QString::number(row) + QString::number(col);
+            QPushButton *button = ChessGame::findChild<QPushButton *>(field);
+            if(ChessGame::ChessBoard[row][col]->getColor() == color){
+                button->setDisabled(false);
+            }
+        }
+    }
+}
+
+void ChessGame::DisableAllButtons(){
+    for(int row=0; row <8; row++){
+        for(int col=0; col<8; col++){
+            QString field = "field_" + QString::number(row) + QString::number(col);
+            QPushButton *button = ChessGame::findChild<QPushButton *>(field);
+            button->setDisabled(true);
+        }
+    }
+}
+
+void ChessGame::UndisablePossibleMoves(){
+    for(int row=0; row <8; row++){
+        for(int col=0; col<8; col++){
+            if(ChessGame::possibleMoves[row][col] == true){
+                QString field = "field_" + QString::number(row) + QString::number(col);
+                QPushButton *button = ChessGame::findChild<QPushButton *>(field);
+                button->setDisabled(false);
+            }
+        }
+    }
 }
 
 void ChessGame::FieldPressed(){
@@ -49,6 +86,7 @@ void ChessGame::FieldPressed(){
      } else {
         SetSelectedPosition(row, col);
         CheckPossibleMoves(ChessGame::ChessBoard[row][col]);
+        UndisablePossibleMoves();
      }
 
 }
@@ -80,7 +118,8 @@ void ChessGame::TryToMovePawn(){
 
     }
     ResetPosition();
-
+    DisableAllButtons();
+    UndisableButtons();
 }
 
 void ChessGame::ChangeTurn(){
