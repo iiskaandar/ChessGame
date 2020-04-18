@@ -26,7 +26,12 @@ QString Queen::getIconName(){
         return("queen");
     }
 }
-
+/*!
+ * \brief Queen::checkPossibleMove Function return possible movex of object
+ * \param position Current position of object
+ * \param ChessBoard Current position of all object on chess board
+ * \return List boolean, which field is possible to move on
+ */
 array<array<bool,8>,8> Queen::checkPossibleMove(array<int, 2> position,  array<array<Pawn*,8>,8> ChessBoard){
     array<array<bool,8>,8> possibleMoves;
     int startRow = 0;

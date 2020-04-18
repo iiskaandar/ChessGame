@@ -39,6 +39,9 @@ ChessGame::~ChessGame()
     delete ui;
 }
 
+/*!
+ * \brief ChessGame::UndisableButtons undisable white or black buttons depends on turn
+ */
 void ChessGame::UndisableButtons(){
     string color = ChessGame::turn;
     for(int row=0; row <8; row++){
@@ -52,6 +55,9 @@ void ChessGame::UndisableButtons(){
     }
 }
 
+/*!
+ * \brief ChessGame::DisableAllButtons Disable all buttons on the chess board
+ */
 void ChessGame::DisableAllButtons(){
     for(int row=0; row <8; row++){
         for(int col=0; col<8; col++){
@@ -62,6 +68,9 @@ void ChessGame::DisableAllButtons(){
     }
 }
 
+/*!
+ * \brief ChessGame::UndisablePossibleMoves Undisable buttons on which selected object can move
+ */
 void ChessGame::UndisablePossibleMoves(){
     for(int row=0; row <8; row++){
         for(int col=0; col<8; col++){
@@ -74,6 +83,9 @@ void ChessGame::UndisablePossibleMoves(){
     }
 }
 
+/*!
+ * \brief ChessGame::FieldPressed When button is pressed this function checks what has to be done to move on this object
+ */
 void ChessGame::FieldPressed(){
     QPushButton *button = (QPushButton *)sender();
     QString butName = button->objectName();
@@ -105,6 +117,9 @@ void ChessGame::SetSelectedProposition(int row, int col){
     ChessGame::propositionPosition[1] = col;
 }
 
+/*!
+ * \brief ChessGame::TryToMovePawn Make move of object on chess board, and checks if is winner
+ */
 void ChessGame::TryToMovePawn(){
     bool isRightPosition = CheckPosition();
     if(isRightPosition){
@@ -122,6 +137,9 @@ void ChessGame::TryToMovePawn(){
     UndisableButtons();
 }
 
+/*!
+ * \brief ChessGame::ChangeTurn After move position of object is changed turn
+ */
 void ChessGame::ChangeTurn(){
     if(ChessGame::turn == "white"){
         ChessGame::turn = "black";
@@ -131,6 +149,9 @@ void ChessGame::ChangeTurn(){
     ui->turn->setText(QString::fromStdString(ChessGame::turn));
 }
 
+/*!
+ * \brief ChessGame::MovePawn if it is possible, move pawn and reset last position of object
+ */
 void ChessGame::MovePawn(){
     CheckLoss();
     Pawn* pawnToMove = ChessGame::ChessBoard[ChessGame::selectedPosition[0]][ChessGame::selectedPosition[1]];
@@ -147,6 +168,9 @@ void ChessGame::MovePawn(){
     nullButton->setIcon(QIcon());
 }
 
+/*!
+ * \brief ChessGame::CheckLoss Check if is winner or looser
+ */
 void ChessGame::CheckLoss(){
     if(ChessGame::ChessBoard[ChessGame::propositionPosition[0]][ChessGame::propositionPosition[1]]->getName() == "Król"){
         string lostMessage = ChessGame::ChessBoard[ChessGame::propositionPosition[0]][ChessGame::propositionPosition[1]]->getColor() + " lost";
@@ -154,6 +178,7 @@ void ChessGame::CheckLoss(){
         ChessGame::isWinner = true;
     }
 }
+
 
 void ChessGame::ResetPosition(){
     ChessGame::selectedPosition[0] = -1;
@@ -165,6 +190,9 @@ bool ChessGame::CheckPosition(){
     return (isRightPosition);
 }
 
+/*!
+ * \brief ChessGame::SetBoard Add all pawn on chess board
+ */
 void ChessGame::SetBoard(){
     for(int row=0; row<8; row++){
         for(int col=0; col<8; col++){
@@ -214,6 +242,13 @@ void ChessGame::SetBoard(){
 
 }
 
+/*!
+ * \brief ChessGame::SetPawn Set individual pawn
+ * \param pawn Class which is inherited of Pawn abstraction
+ * \param column Current column
+ * \param row Current row
+ * \param color What color of pawn
+ */
 void ChessGame::SetPawn(Pawn* pawn, int column, int row, string color){
     pawn->setColor(color);
     ChessGame::ChessBoard[row][column] = pawn;
@@ -223,6 +258,11 @@ void ChessGame::SetPawn(Pawn* pawn, int column, int row, string color){
     AddIcon(pawn->getIconName(), button);
 }
 
+/*!
+ * \brief ChessGame::AddIcon Add icon to button of pawn
+ * \param url Url to image of icon
+ * \param button To which button has to add icon
+ */
 void ChessGame::AddIcon(QString url, QPushButton* button){
     QIcon icon;
     QPixmap qpm;
