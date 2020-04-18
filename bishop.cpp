@@ -6,6 +6,31 @@ string Bishop::getName(){
     return ("Goniec");
 }
 
+int Bishop::getleftWhiteStartRow(){
+    return Bishop::leftWhiteStartRow;
+}
+int Bishop::getleftWhiteStartColumn(){
+    return Bishop::leftWhiteStartColumn;
+}
+int Bishop::getrightWhiteStartRow(){
+    return Bishop::rightWhiteStartRow;
+}
+int Bishop::getrightWhiteStartColumn(){
+    return Bishop::rightWhiteStartColumn;
+}
+int Bishop::getleftBlackStartRow(){
+    return Bishop::leftBlackStartRow;
+}
+int Bishop::getleftBlackStartColumn(){
+    return Bishop::leftBlackStartColumn;
+}
+int Bishop::getrightBlackStartRow(){
+    return Bishop::rightBlackStartRow;
+}
+int Bishop::getrightBlackStartColumn(){
+    return Bishop::rightBlackStartColumn;
+}
+
 QString Bishop::getIconName(){
     if(Bishop::getColor() == "white"){
         return("bishop1");

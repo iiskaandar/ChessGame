@@ -6,6 +6,19 @@ string Queen::getName(){
     return ("Królowa");
 }
 
+int Queen::getwhiteStartRow(){
+    return Queen::whiteStartRow;
+}
+int Queen::getwhiteStartColumn(){
+    return Queen::whiteStartColumn;
+}
+int Queen::getblackStartRow(){
+    return Queen::blackStartRow;
+}
+int Queen::getblackStartColumn(){
+    return Queen::blackStartColumn;
+}
+
 QString Queen::getIconName(){
     if(Queen::getColor() == "white"){
         return("queen1");

@@ -6,6 +6,19 @@ string King::getName(){
     return ("Król");
 }
 
+int King::getwhiteStartRow(){
+    return King::whiteStartRow;
+}
+int King::getwhiteStartColumn(){
+    return King::whiteStartColumn;
+}
+int King::getblackStartRow(){
+    return King::blackStartRow;
+}
+int King::getblackStartColumn(){
+    return King::blackStartColumn;
+}
+
 QString King::getIconName(){
     if(King::getColor() == "white"){
         return("king1");

@@ -7,6 +7,31 @@ string Rook::getName(){
     return ("Wieża");
 }
 
+int Rook::getleftWhiteStartRow(){
+    return Rook::leftWhiteStartRow;
+}
+int Rook::getleftWhiteStartColumn(){
+    return Rook::leftWhiteStartColumn;
+}
+int Rook::getrightWhiteStartRow(){
+    return Rook::rightWhiteStartRow;
+}
+int Rook::getrightWhiteStartColumn(){
+    return Rook::rightWhiteStartColumn;
+}
+int Rook::getleftBlackStartRow(){
+    return Rook::leftBlackStartRow;
+}
+int Rook::getleftBlackStartColumn(){
+    return Rook::leftBlackStartColumn;
+}
+int Rook::getrightBlackStartRow(){
+    return Rook::rightBlackStartRow;
+}
+int Rook::getrightBlackStartColumn(){
+    return Rook::rightBlackStartColumn;
+}
+
 QString Rook::getIconName(){
     if(Rook::getColor() == "white"){
         return("rook1");

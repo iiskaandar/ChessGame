@@ -6,6 +6,31 @@ string Knight::getName(){
     return ("Koń");
 }
 
+int Knight::getleftWhiteStartRow(){
+    return Knight::leftWhiteStartRow;
+}
+int Knight::getleftWhiteStartColumn(){
+    return Knight::leftWhiteStartColumn;
+}
+int Knight::getrightWhiteStartRow(){
+    return Knight::rightWhiteStartRow;
+}
+int Knight::getrightWhiteStartColumn(){
+    return Knight::rightWhiteStartColumn;
+}
+int Knight::getleftBlackStartRow(){
+    return Knight::leftBlackStartRow;
+}
+int Knight::getleftBlackStartColumn(){
+    return Knight::leftBlackStartColumn;
+}
+int Knight::getrightBlackStartRow(){
+    return Knight::rightBlackStartRow;
+}
+int Knight::getrightBlackStartColumn(){
+    return Knight::rightBlackStartColumn;
+}
+
 QString Knight::getIconName(){
     if(Knight::getColor() == "white"){
         return("horse1");

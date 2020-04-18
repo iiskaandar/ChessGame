@@ -173,37 +173,37 @@ void ChessGame::SetBoard(){
         }
     }
     Rook *leftWhiteRook = new Rook;
-    ChessGame::SetPawn(leftWhiteRook, leftWhiteRook->leftWhiteStartColumn, leftWhiteRook->leftWhiteStartRow, "white");
+    ChessGame::SetPawn(leftWhiteRook, leftWhiteRook->getleftWhiteStartColumn(), leftWhiteRook->getleftWhiteStartRow(), "white");
     Rook *rightWhiteRook= new Rook;
-    ChessGame::SetPawn(rightWhiteRook, rightWhiteRook->rightWhiteStartColumn, rightWhiteRook->rightWhiteStartRow, "white");
+    ChessGame::SetPawn(rightWhiteRook, rightWhiteRook->getrightWhiteStartColumn(), rightWhiteRook->getrightWhiteStartRow(), "white");
     Rook *leftBlackRook = new Rook;
-    ChessGame::SetPawn(leftBlackRook, leftBlackRook->leftBlackStartColumn, leftBlackRook->leftBlackStartRow, "black");
+    ChessGame::SetPawn(leftBlackRook, leftBlackRook->getleftBlackStartColumn(), leftBlackRook->getleftBlackStartRow(), "black");
     Rook *rightBlackRook = new Rook;
-    ChessGame::SetPawn(rightBlackRook, rightBlackRook->rightBlackStartColumn, rightBlackRook->rightBlackStartRow, "black");
+    ChessGame::SetPawn(rightBlackRook, rightBlackRook->getrightBlackStartColumn(), rightBlackRook->getrightBlackStartRow(), "black");
     Knight *leftWhiteKnight = new Knight;
-    ChessGame::SetPawn(leftWhiteKnight, leftWhiteKnight->leftWhiteStartColumn, leftWhiteKnight->leftWhiteStartRow, "white");
+    ChessGame::SetPawn(leftWhiteKnight, leftWhiteKnight->getleftWhiteStartColumn(), leftWhiteKnight->getleftWhiteStartRow(), "white");
     Knight *rightWhiteKnight = new Knight;
-    ChessGame::SetPawn(rightWhiteKnight, rightWhiteKnight->rightWhiteStartColumn, rightWhiteKnight->rightWhiteStartRow, "white");
+    ChessGame::SetPawn(rightWhiteKnight, rightWhiteKnight->getrightWhiteStartColumn(), rightWhiteKnight->getrightWhiteStartRow(), "white");
     Knight *leftBlackKnight = new Knight;
-    ChessGame::SetPawn(leftBlackKnight, leftBlackKnight->leftBlackStartColumn, leftBlackKnight->leftBlackStartRow, "black");
+    ChessGame::SetPawn(leftBlackKnight, leftBlackKnight->getleftBlackStartColumn(), leftBlackKnight->getleftBlackStartRow(), "black");
     Knight *rightBlackKnight = new Knight;
-    ChessGame::SetPawn(rightBlackKnight, rightBlackKnight->rightBlackStartColumn, rightBlackKnight->rightBlackStartRow, "black");
+    ChessGame::SetPawn(rightBlackKnight, rightBlackKnight->getrightBlackStartColumn(), rightBlackKnight->getrightBlackStartRow(), "black");
     Bishop *leftWhiteBishop = new Bishop;
-    ChessGame::SetPawn(leftWhiteBishop, leftWhiteBishop->leftWhiteStartColumn, leftWhiteBishop->leftWhiteStartRow, "white");
+    ChessGame::SetPawn(leftWhiteBishop, leftWhiteBishop->getleftWhiteStartColumn(), leftWhiteBishop->getleftWhiteStartRow(), "white");
     Bishop *rightWhiteBishop = new Bishop;
-    ChessGame::SetPawn(rightWhiteBishop, rightWhiteBishop->rightWhiteStartColumn, rightWhiteBishop->rightWhiteStartRow, "white");
+    ChessGame::SetPawn(rightWhiteBishop, rightWhiteBishop->getrightWhiteStartColumn(), rightWhiteBishop->getrightWhiteStartRow(), "white");
     Bishop *leftBlackBishop = new Bishop;
-    ChessGame::SetPawn(leftBlackBishop, leftBlackBishop->leftBlackStartColumn, leftBlackBishop->leftBlackStartRow, "black");
+    ChessGame::SetPawn(leftBlackBishop, leftBlackBishop->getleftBlackStartColumn(), leftBlackBishop->getleftBlackStartRow(), "black");
     Bishop *rightBlackBishop = new Bishop;
-    ChessGame::SetPawn(rightBlackBishop, rightBlackBishop->rightBlackStartColumn, rightBlackBishop->rightBlackStartRow, "black");
+    ChessGame::SetPawn(rightBlackBishop, rightBlackBishop->getrightBlackStartColumn(), rightBlackBishop->getrightBlackStartRow(), "black");
     King *whiteKing = new King;
-    ChessGame::SetPawn(whiteKing, whiteKing->whiteStartColumn, whiteKing->whiteStartRow, "white");
+    ChessGame::SetPawn(whiteKing, whiteKing->getwhiteStartColumn(), whiteKing->getwhiteStartRow(), "white");
     King *blackKing = new King;
-    ChessGame::SetPawn(blackKing, blackKing->blackStartColumn, blackKing->blackStartRow, "black");
+    ChessGame::SetPawn(blackKing, blackKing->getblackStartColumn(), blackKing->getblackStartRow(), "black");
     Queen *whiteQueen = new Queen;
-    ChessGame::SetPawn(whiteQueen, whiteQueen->whiteStartColumn, whiteQueen->whiteStartRow, "white");
+    ChessGame::SetPawn(whiteQueen, whiteQueen->getwhiteStartColumn(), whiteQueen->getwhiteStartRow(), "white");
     Queen *blackQueen = new Queen;
-    ChessGame::SetPawn(blackQueen, blackQueen->blackStartColumn, blackQueen->blackStartRow, "black");
+    ChessGame::SetPawn(blackQueen, blackQueen->getblackStartColumn(), blackQueen->getblackStartRow(), "black");
 
     for(int i=0; i<8; i++){
         MainPawn *blackMainPawn = new MainPawn;

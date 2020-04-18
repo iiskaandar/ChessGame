@@ -4,8 +4,10 @@ using namespace std;
 
 class MainPawn : public Pawn
 {
+private:
+   bool firstMove = true;
 public:
-    bool firstMove = true;
+
     string getName() override;
     QString getIconName() override;
     bool getFirstMove() override;
